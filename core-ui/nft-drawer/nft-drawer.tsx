@@ -116,6 +116,21 @@ export const NFTDrawer: React.FC<NFTDrawerProps> = ({
                         {renderData.type}
                       </Badge>
                     </GridItem>
+                    <GridItem colSpan={3}>
+                          <Heading size="label.md">URI</Heading>
+                        </GridItem>
+                        <GridItem colSpan={9}>
+                          <AddressCopyButton size="xs" address={renderData.metadata.uri}/>
+                        </GridItem>
+                        <GridItem colSpan={3}>
+                          <Heading size="label.md">{renderData.metadata.image ? 'Image' : 'Model'}</Heading>
+                        </GridItem>
+                        <GridItem colSpan={9}>
+                          <AddressCopyButton 
+                            size="xs" 
+                            address={renderData.metadata.image || renderData.metadata.animation_url || undefined}
+                          />
+                      </GridItem>
                     {renderData.type !== "ERC721" && (
                       <>
                         <GridItem colSpan={3}>
